@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Header from "./components/Header";
 import Search from "./components/Search";
+import SpinnerLoading from "./components/SpinnerLoading";
 import AdviceList from "./components/AdviceList.js";
 import { searchAdviceByTerm } from "./services/adviceService";
 
@@ -30,9 +31,11 @@ function App() {
       <Header title="Advice Slip Search" />
       <div className="container">
         <Search onSearch={handleSearch} />
-        {isLoading && <p className="text-center">Loading...</p>}
-        {error && <p className="text-danger mt-4 mb-4 text-center">{error}</p>}
-        <AdviceList adviceList={adviceList} />
+        {isLoading && <SpinnerLoading />}
+        {!isLoading && !error && <AdviceList adviceList={adviceList} />}
+        {error && !isLoading && (
+          <p className="text-danger mt-4 mb-4 text-center">{error}</p>
+        )}
       </div>
     </div>
   );
