@@ -1,6 +1,7 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Header from "./components/Header";
 import Search from "./components/Search";
+import AdviceList from "./components/AdviceList.js";
 import { searchAdviceByTerm } from "./services/adviceService";
 
 function App() {
@@ -26,11 +27,7 @@ function App() {
       <div className="container">
         <Search onSearch={handleSearch} />
         {error && <p className="text-danger mt-4 mb-4 text-center">{error}</p>}
-        <ul>
-          {adviceList.map((advice) => (
-            <li key={advice.slip_id}>{advice.advice}</li>
-          ))}
-        </ul>
+        <AdviceList adviceList={adviceList} />
       </div>
     </div>
   );
