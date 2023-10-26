@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Header from "./components/Header";
 import Search from "./components/Search";
 import SpinnerLoading from "./components/SpinnerLoading";
+import ErrorMessage from "./components/ErrorMessage";
 import AdviceList from "./components/AdviceList.js";
 import { searchAdviceByTerm } from "./services/adviceService";
 
@@ -33,9 +34,7 @@ function App() {
         <Search onSearch={handleSearch} />
         {isLoading && <SpinnerLoading />}
         {!isLoading && !error && <AdviceList adviceList={adviceList} />}
-        {error && !isLoading && (
-          <p className="text-danger mt-4 mb-4 text-center">{error}</p>
-        )}
+        {error && !isLoading && <ErrorMessage message={error} />}
       </div>
     </div>
   );
