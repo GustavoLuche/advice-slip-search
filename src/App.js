@@ -7,6 +7,7 @@ import ErrorMessage from "./components/ErrorMessage";
 import SearchInfo from "./components/SearchInfo";
 import Paginator from "./components/Paginator";
 import AdviceList from "./components/AdviceList.js";
+import Footer from "./components/Footer";
 import { searchAdviceByTerm } from "./services/adviceService";
 
 function App() {
@@ -38,7 +39,7 @@ function App() {
   // Função para lidar com a mudança de página
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
-  };  
+  };
 
   return (
     <div className="App">
@@ -68,6 +69,7 @@ function App() {
         )}
         {error && !isLoading && <ErrorMessage message={error} />}
       </div>
+      <Footer />
     </div>
   );
 }
