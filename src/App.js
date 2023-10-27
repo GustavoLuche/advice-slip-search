@@ -9,6 +9,7 @@ import Paginator from "./components/Paginator";
 import AdviceList from "./components/AdviceList.js";
 import Footer from "./components/Footer";
 import { searchAdviceByTerm } from "./services/adviceService";
+import "./App.css"
 
 function App() {
   // Inicialização dos estados
