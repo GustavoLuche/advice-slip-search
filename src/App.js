@@ -38,16 +38,7 @@ function App() {
   // Função para lidar com a mudança de página
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
-  };
-
-  // Calcular o índice do primeiro item na página atual
-  const startIndex = (currentPage - 1) * itemsPerPage;
-
-  // Filtrar a lista de conselhos para exibir apenas os itens da página atual
-  const adviceListToDisplay = adviceList.slice(
-    startIndex,
-    startIndex + itemsPerPage
-  );
+  };  
 
   return (
     <div className="App">
@@ -68,10 +59,12 @@ function App() {
               itemsPerPage={itemsPerPage}
               onPageChange={handlePageChange}
             />
+            <AdviceList
+              adviceList={adviceList}
+              currentPage={currentPage}
+              itemsPerPage={itemsPerPage}
+            />
           </>
-        )}
-        {!isLoading && !error && (
-          <AdviceList adviceList={adviceListToDisplay} />
         )}
         {error && !isLoading && <ErrorMessage message={error} />}
       </div>
