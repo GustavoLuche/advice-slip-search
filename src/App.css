@@ -17,3 +17,43 @@
   background-color: #007bff;
   color: #fff;
 }
+
+/* Estilos responsivos */
+
+/* Layout de 2 colunas para telas grandes */
+@media (min-width: 768px) {
+  .App-container {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 20px; 
+  }
+}
+
+/* Layout de 2 colunas para telas grandes (antes da pesquisa) */
+.no-search-performed {
+  grid-template-columns: 1fr; 
+  padding: 60px;
+}
+
+/* Estilo para telas menores ou dispositivos móveis */
+@media (max-width: 768px) {
+  .App-container {
+    grid-template-columns: 1fr; 
+  }
+
+  .App-header h1 {
+      font-size: 24px;
+  }
+
+  .App-greeting h2 {
+    font-size: 20px;
+  }
+
+  .App-greeting p {
+    font-size: 16px;
+  }
+
+  .App-search-info {
+    text-align: center;
+  }
+}

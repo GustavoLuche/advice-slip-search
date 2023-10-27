@@ -2,7 +2,7 @@ import React from "react";
 
 function Greeting() {
   return (
-    <div className="App-greeting mb-3">
+    <div className="App-greeting mb-4">
       <h2 className="text-center">Welcome to the Advice Slip Search</h2>
       <p className="text-center m-0">
         Get advice on various topics. Start by entering a search term below.

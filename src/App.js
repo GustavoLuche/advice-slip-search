@@ -18,6 +18,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+  const [searchPerformed, setSearchPerformed] = useState(false);
   const itemsPerPage = 5;
 
   // Função para lidar com a pesquisa de conselhos
@@ -28,9 +29,11 @@ function App() {
       const adviceData = await searchAdviceByTerm(term);
       setAdviceList(adviceData);
       setError(null);
+      setSearchPerformed(true);
     } catch (err) {
       setAdviceList([]);
       setError(err.message);
+      setSearchPerformed(false);
     } finally {
       setIsLoading(false);
       setCurrentPage(1);
@@ -46,7 +49,7 @@ function App() {
     <div className="App">
       <Header title="Advice Slip Search" />
       <Greeting />
-      <div className="container">
+      <div className={`App-container container ${searchPerformed ? "" : "no-search-performed"}`}>
         <Search onSearch={handleSearch} />
         {isLoading && <SpinnerLoading />}
         {!isLoading && !error && searchTerm !== "" && (
