@@ -5,8 +5,8 @@ function Paginator({ totalResults, currentPage, itemsPerPage, onPageChange }) {
   const totalPages = Math.ceil(totalResults / itemsPerPage);
 
   return (
-    <div className="App-paginator d-flex justify-content-center">
-      <Pagination>
+    <div className="App-paginator d-flex justify-content-center mb-3">
+      <Pagination className="m-0">
         {Array.from({ length: totalPages }, (_, index) => (
           <Pagination.Item
             key={index}

@@ -12,9 +12,9 @@ function AdviceList({ adviceList, currentPage, itemsPerPage }) {
   );
 
   return (
-    <div>
+    <div className="App-list mb-3">
       {adviceListToDisplay.map((advice, index) => (
-        <Card key={advice.id} className="mb-3">
+        <Card key={advice.id} className="mb-2">
           <Card.Body>
             <Card.Text>
               <strong>{startIndex + index + 1}. </strong>
