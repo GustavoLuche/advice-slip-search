@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Header from "./components/Header";
+import Greeting from "./components/Greeting";
 import Search from "./components/Search";
 import SpinnerLoading from "./components/SpinnerLoading";
 import ErrorMessage from "./components/ErrorMessage";
@@ -33,6 +34,7 @@ function App() {
   return (
     <div className="App">
       <Header title="Advice Slip Search" />
+      <Greeting />
       <div className="container">
         <Search onSearch={handleSearch} />
         {isLoading && <SpinnerLoading />}
