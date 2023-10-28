@@ -2,17 +2,21 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import InputGroup from "react-bootstrap/InputGroup";
 import Form from "react-bootstrap/Form";
+import { useAdviceContext } from "../context/AdviceContext";
 
 // Função para lidar com a pesquisa
-function Search({ onSearch }) {
+function Search() {
+  // Usando o contexto para acessar a função
+  const { searchAdviceByTerm } = useAdviceContext();
+
   const [searchQuery, setSearchQuery] = useState("");
 
   const handleSearch = () => {
-    if (typeof onSearch === "function" && searchQuery.trim() !== "") {
-      onSearch(searchQuery);
+    if (typeof searchAdviceByTerm === "function" && searchQuery.trim() !== "") {
+      searchAdviceByTerm(searchQuery);
       setSearchQuery("");
     } else {
-      console.error("Invalid onSearch function or empty search term.");
+      console.error("Invalid searchAdviceByTerm function or empty search term.");
     }
   };
 

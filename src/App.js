@@ -13,7 +13,7 @@ import "./App.css";
 
 function App() {
   // Usando o contexto para acessar o estado e funções
-  const { state, searchAdviceByTerm, handlePageChange } = useAdviceContext();
+  const { state, handlePageChange } = useAdviceContext();
   const { adviceList, error, isLoading, searchTerm, currentPage, searchPerformed, itemsPerPage } = state;
 
   return (
@@ -21,7 +21,7 @@ function App() {
       <Header title="Advice Slip Search" />
       <Greeting />
       <div className={`App-container container ${searchPerformed ? "" : "no-search-performed"}`}>
-        <Search onSearch={searchAdviceByTerm} />
+        <Search />
         {isLoading && <SpinnerLoading />}
         {!isLoading && !error && searchTerm !== "" && (
           <>
