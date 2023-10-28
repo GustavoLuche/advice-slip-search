@@ -13,25 +13,32 @@ import "./App.css";
 
 function App() {
   // Usando o contexto para acessar o estado e funções
-  const { state, handlePageChange } = useAdviceContext();
-  const { adviceList, error, isLoading, searchTerm, currentPage, searchPerformed, itemsPerPage } = state;
+  const { state } = useAdviceContext();
+  const {
+    adviceList,
+    error,
+    isLoading,
+    searchTerm,
+    currentPage,
+    searchPerformed,
+    itemsPerPage,
+  } = state;
 
   return (
     <div className="App">
       <Header title="Advice Slip Search" />
       <Greeting />
-      <div className={`App-container container ${searchPerformed ? "" : "no-search-performed"}`}>
+      <div
+        className={`App-container container ${
+          searchPerformed ? "" : "no-search-performed"
+        }`}
+      >
         <Search />
         {isLoading && <SpinnerLoading />}
         {!isLoading && !error && searchTerm !== "" && (
           <>
             <SearchInfo />
-            <Paginator
-              totalResults={adviceList.length}
-              currentPage={currentPage}
-              itemsPerPage={itemsPerPage}
-              onPageChange={handlePageChange}
-            />
+            <Paginator />
             <AdviceList
               adviceList={adviceList}
               currentPage={currentPage}
