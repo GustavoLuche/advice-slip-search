@@ -1,7 +1,12 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
+import { useAdviceContext } from "../context/AdviceContext";
 
-function AdviceList({ adviceList, currentPage, itemsPerPage }) {
+function AdviceList() {
+  // Usando o contexto para acessar o estado
+  const { state } = useAdviceContext();
+  const { adviceList, currentPage, itemsPerPage } = state;
+
   // Calcular o índice do primeiro item na página atual
   const startIndex = (currentPage - 1) * itemsPerPage;
 

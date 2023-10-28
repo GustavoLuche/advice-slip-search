@@ -12,17 +12,9 @@ import { useAdviceContext } from "./context/AdviceContext";
 import "./App.css";
 
 function App() {
-  // Usando o contexto para acessar o estado e funções
+  // Usando o contexto para acessar o estado
   const { state } = useAdviceContext();
-  const {
-    adviceList,
-    error,
-    isLoading,
-    searchTerm,
-    currentPage,
-    searchPerformed,
-    itemsPerPage,
-  } = state;
+  const { error, isLoading, searchTerm, searchPerformed } = state;
 
   return (
     <div className="App">
@@ -39,11 +31,7 @@ function App() {
           <>
             <SearchInfo />
             <Paginator />
-            <AdviceList
-              adviceList={adviceList}
-              currentPage={currentPage}
-              itemsPerPage={itemsPerPage}
-            />
+            <AdviceList />
           </>
         )}
         {error && !isLoading && <ErrorMessage message={error} />}
