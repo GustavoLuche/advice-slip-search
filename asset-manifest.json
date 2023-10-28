@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/advice-slip-search/static/css/main.6f2aca7f.css",
+    "main.js": "/advice-slip-search/static/js/main.544a4f02.js",
+    "static/js/787.6a0cc510.chunk.js": "/advice-slip-search/static/js/787.6a0cc510.chunk.js",
+    "index.html": "/advice-slip-search/index.html",
+    "main.6f2aca7f.css.map": "/advice-slip-search/static/css/main.6f2aca7f.css.map",
+    "main.544a4f02.js.map": "/advice-slip-search/static/js/main.544a4f02.js.map",
+    "787.6a0cc510.chunk.js.map": "/advice-slip-search/static/js/787.6a0cc510.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6f2aca7f.css",
+    "static/js/main.544a4f02.js"
+  ]
+}
