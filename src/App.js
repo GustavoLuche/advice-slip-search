@@ -25,7 +25,7 @@ function App() {
         {isLoading && <SpinnerLoading />}
         {!isLoading && !error && searchTerm !== "" && (
           <>
-            <SearchInfo totalResults={adviceList.length} searchTerm={searchTerm} />
+            <SearchInfo />
             <Paginator
               totalResults={adviceList.length}
               currentPage={currentPage}
