@@ -34,7 +34,7 @@ function App() {
             <AdviceList />
           </>
         )}
-        {error && !isLoading && <ErrorMessage message={error} />}
+        {error && !isLoading && <ErrorMessage />}
       </div>
       <Footer />
     </div>
