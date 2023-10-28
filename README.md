@@ -1,70 +1,105 @@
-# Getting Started with Create React App
+# Advice Slip Search
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the Advice Slip Search, a web application that allows you to search for and discover insightful advice on various topics. Whether you need motivation, inspiration, or simply some good old advice, this app has you covered.
 
-## Available Scripts
+This project is built using React and integrates with the Advice Slip API to fetch advice slips based on your search queries. It also utilizes React Bootstrap to enhance the user interface.
 
-In the project directory, you can run:
+You can explore the live version of this project on [GitHub Pages](https://gustavoluche.github.io/advice-slip-search/).
 
-### `npm start`
+## Project Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The project is organized into the following directories:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  ```bash
+  src/
+  |-- components/
+  |   |-- AdviceList.js
+  |   |-- ErrorMessage.js
+  |   |-- Footer.js
+  |   |-- Greeting.js
+  |   |-- Header.js
+  |   |-- Paginator.js
+  |   |-- Search.js
+  |   |-- SearchInfo.js
+  |   |-- SpinnerLoading.js
+  |-- context/
+  |   |-- AdviceContext.js
+  |-- services/
+  |   |-- adviceService.js
+  |-- App.css
+  |-- App.js
+  |-- index.js
+  ```
 
-### `npm test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To get started with this project, follow the instructions below.
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Before you begin, ensure you have the following tools installed:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [Node.js](https://nodejs.org/): Make sure you have Node.js installed on your machine.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Installation
 
-### `npm run eject`
+1. Clone the repository to your local machine using:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+  ```bash
+  git clone https://github.com/GustavoLuche/advice-slip-search.git
+  ```
+  
+2. Navigate to the project's root directory:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  ```bash
+  cd advice-slip-search
+  ```
+  
+4. Install project dependencies:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+  ```bash
+  npm install
+  ```
+  
+### Usage
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+You can run the app locally by executing the following command:
 
-## Learn More
+  ```bash
+  npm start
+  ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This will start the development server, and you can access the app in your web browser at http://localhost:3000.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The app is simple to use:
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Start by entering a search term in the search bar and press Enter or click the Search button.
+- The app will fetch and display advice slips related to your search term.
+- You can navigate through the results using the pagination controls.
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+To create a production build of the app, use the following command:
 
-### `npm run build` fails to minify
+  ```bash
+  npm run build
+  ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This will optimize your app for production and create a build folder. You can then deploy the app to a web server or hosting service. For example, you can easily deploy it to GitHub Pages using the gh-pages module.
+
+### Customization
+
+If you want to customize or extend this app, you have full control over the source code. You can modify the components, styles, or even add additional features.
+
+## Technologies Used
+
+- [React](https://react.dev/): A JavaScript library for building user interfaces.
+- [React Bootstrap](https://react-bootstrap.netlify.app/): A library that provides Bootstrap components for React.
+- [Bootstrap](https://getbootstrap.com/): A front-end framework for responsive web design.
+- [Advice Slip API](https://api.adviceslip.com/): The API that provides the advice slips for this app.
+
+## Acknowledgments
+
+Thanks to the creators of the [Advice Slip API](https://api.adviceslip.com/).
+
+If you have any questions or suggestions, please feel free to [create an issue](https://github.com/GustavoLuche/advice-slip-search/issues/new). We appreciate your feedback and contributions.
