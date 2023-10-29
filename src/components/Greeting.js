@@ -1,5 +1,6 @@
 import React from "react";
 
+// O componente Greeting exibe uma mensagem de boas-vindas na aplicação.
 function Greeting() {
   return (
     <div className="App-greeting mb-4">

@@ -2,6 +2,7 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import { useAdviceContext } from "../context/AdviceContext";
 
+// O componente "AdviceList" é responsável por exibir a lista de conselhos em cartões.
 function AdviceList() {
   // Usando o contexto para acessar o estado
   const { state } = useAdviceContext();

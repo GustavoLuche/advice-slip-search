@@ -2,6 +2,7 @@ import React from "react";
 import Pagination from "react-bootstrap/Pagination";
 import { useAdviceContext } from "../context/AdviceContext";
 
+// O componente "Paginator" é responsável pela paginação dos resultados da pesquisa.
 function Paginator() {
   // Usando o contexto para acessar o estado e funções
   const { state, handlePageChange } = useAdviceContext();

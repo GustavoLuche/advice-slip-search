@@ -4,23 +4,25 @@ import InputGroup from "react-bootstrap/InputGroup";
 import Form from "react-bootstrap/Form";
 import { useAdviceContext } from "../context/AdviceContext";
 
-// Função para lidar com a pesquisa
+// O componente "Search" permite que os usuários insiram um termo de busca e iniciem a pesquisa.
 function Search() {
-  // Usando o contexto para acessar a função
+  // Usando o contexto para acessar a função de pesquisa
   const { searchAdviceByTerm } = useAdviceContext();
 
+  // Estado local para controlar o termo de busca
   const [searchQuery, setSearchQuery] = useState("");
 
+  // Função para lidar com a pesquisa
   const handleSearch = () => {
     if (typeof searchAdviceByTerm === "function" && searchQuery.trim() !== "") {
       searchAdviceByTerm(searchQuery);
-      setSearchQuery("");
+      setSearchQuery(""); // Limpa o campo de busca após a pesquisa
     } else {
       console.error("Invalid searchAdviceByTerm function or empty search term.");
     }
   };
 
-  // Manipulador para envio de formulário com Enter
+  // Manipulador para envio de formulário quando o usuário pressiona Enter
   const handleSubmit = (e) => {
     e.preventDefault();
     handleSearch();
@@ -28,7 +30,7 @@ function Search() {
 
   return (
     <div className="App-search mb-3 d-flex justify-content-center">
-      <Form onSubmit={handleSubmit} >
+      <Form onSubmit={handleSubmit}>
         <InputGroup>
           <Form.Control
             type="text"
